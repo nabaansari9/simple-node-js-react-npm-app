@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    tools{
+        nodejs Node-18.4
+    }
     stages {
         stage('Build') { 
             steps {
-                //sh 'npm install' 
                 echo 'Building the application'
+                sh 'npm install' 
             }
         }
         stage('Test') { 
